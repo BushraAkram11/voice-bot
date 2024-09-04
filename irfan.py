@@ -15,13 +15,12 @@ import streamlit as st
 import re
 import os
 
-st.set_page_config(page_title="AI Voice Bot", page_icon="🤖")
+st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 
-# Centered Title and Subtitle
-st.markdown("<h1 style='text-align: center;'>AI Voice Bot </h1>", unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
+st.title("AI Voice Assistant 🎙️")
+st.subheader("Interact in Urdu with Real-Time Voice Input")
 
-api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"  # Add your Google API key here
+api_key = "..."
 
 # Define the prompt
 prompt = ChatPromptTemplate(
@@ -47,36 +46,32 @@ chain_with_history = RunnableWithMessageHistory(
 
 langs = tts_langs().keys()
 
-# Button for recording
-if st.button("Start Speaking"):
-    with st.spinner("Converting Speech To Text..."):
-        text = speech_to_text(language="ur", use_container_width=True, just_once=True, key="STT")
+st.write("Press the button and start speaking in Urdu:")
 
-    if text:
-        st.chat_message("human").write(text)
-        with st.chat_message("assistant"):
-            message_placeholder = st.empty()
-            full_response = ""
+with st.spinner("Converting Speech To Text..."):
+    text = speech_to_text(language="ur", use_container_width=True, just_once=True, key="STT")
 
-            config = {"configurable": {"session_id": "any"}}
-            response = chain_with_history.stream({"question": text}, config)
+if text:
+    st.chat_message("human").write(text)
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty()
+        full_response = ""
 
-            for res in response:
-                full_response += res or ""
-                message_placeholder.markdown(full_response + "|")
-                message_placeholder.markdown(full_response)
+        config = {"configurable": {"session_id": "any"}}
+        response = chain_with_history.stream({"question": text}, config)
 
-        # Clean the response to remove unwanted characters like '**'
-        cleaned_response = re.sub(r"\*\*|__", "", full_response)
+        for res in response:
+            full_response += res or ""
+            message_placeholder.markdown(full_response + "|")
+            message_placeholder.markdown(full_response)
 
-        with st.spinner("Converting Text To Speech..."):
-            tts = gTTS(text=cleaned_response, lang="ur")
-            tts.save("output.mp3")
+    # Clean the response to remove unwanted characters like '**'
+    cleaned_response = re.sub(r"\*\*|__", "", full_response)
 
-# Separate buttons for playing and stopping the audio
-if os.path.exists("output.mp3"):
-    if st.button("Play Response"):
+    with st.spinner("Converting Text To Speech..."):
+        tts = gTTS(text=cleaned_response, lang="ur")
+        tts.save("output.mp3")
         st.audio("output.mp3")
-    if st.button("Stop Response"):
-        # To stop the audio, we'll just remove the audio widget
-        st.stop()
+
+else:
+    st.warning("Please press the button and start speaking.")
