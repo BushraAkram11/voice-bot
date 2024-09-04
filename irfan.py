@@ -13,15 +13,15 @@ from gtts import gTTS
 from gtts.lang import tts_langs
 import streamlit as st
 import re
-import os
 
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 
-# Centered Title and Subtitle
-st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_html=True)
+# Centered Image Title and Subtitle
+image_url = "https://media.licdn.com/dms/image/D5612AQGlfhE9IBQ8Bg/article-cover_image-shrink_720_1280/0/1693596641359?e=2147483647&v=beta&t=s4-cupYxd1X8LkPu4ZYRhUnTf-7eYlggKJNhp0cR7zg"
+st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='600'></div>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
 
-api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"  # Add your Google API key here
+api_key = "..."  # Add your Google API key here
 
 # Define the prompt
 prompt = ChatPromptTemplate(
@@ -63,9 +63,9 @@ if text:
 
         for res in response:
             full_response += res or ""
-            # Clean the response to remove unwanted characters like '**'
-            cleaned_response = re.sub(r"\*\*|__", "", full_response)
-            message_placeholder.markdown(cleaned_response + "|")
+            # Clean the response to remove unwanted characters and extra spaces
+            cleaned_response = re.sub(r"[*_~`]", "", full_response)  # Remove Markdown symbols (*, _, ~, `)
+            cleaned_response = re.sub(r"\s+", " ", cleaned_response).strip()  # Remove extra spaces
             message_placeholder.markdown(cleaned_response)
 
     with st.spinner("Converting Text To Speech..."):
