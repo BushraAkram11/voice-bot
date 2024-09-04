@@ -17,7 +17,7 @@ import re
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 
 # Centered Title and Subtitle
-st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'> AI Voice Bot🎙️</h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
 
 # Centered Image below Title and Subtitle with Increased Width
