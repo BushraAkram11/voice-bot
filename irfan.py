@@ -16,10 +16,13 @@ import re
 
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 
-# Centered Image Title and Subtitle
-image_url = "https://media.licdn.com/dms/image/D5612AQGlfhE9IBQ8Bg/article-cover_image-shrink_720_1280/0/1693596641359?e=2147483647&v=beta&t=s4-cupYxd1X8LkPu4ZYRhUnTf-7eYlggKJNhp0cR7zg"
-st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='600'></div>", unsafe_allow_html=True)
+# Centered Title and Subtitle
+st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
+
+# Centered Image below Title and Subtitle with Increased Width
+image_url = "https://media.licdn.com/dms/image/D5612AQGlfhE9IBQ8Bg/article-cover_image-shrink_720_1280/0/1693596641359?e=2147483647&v=beta&t=s4-cupYxd1X8LkPu4ZYRhUnTf-7eYlggKJNhp0cR7zg"
+st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='800'></div>", unsafe_allow_html=True)
 
 api_key = "..."  # Add your Google API key here
 
