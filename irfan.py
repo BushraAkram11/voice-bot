@@ -21,7 +21,7 @@ st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
 
 # Centered Image below Title and Subtitle with Increased Width
-image_url = "https://media.licdn.com/dms/image/D5612AQGlfhE9IBQ8Bg/article-cover_image-shrink_720_1280/0/1693596641359?e=2147483647&v=beta&t=s4-cupYxd1X8LkPu4ZYRhUnTf-7eYlggKJNhp0cR7zg"
+image_url = "https://www.shutterstock.com/image-vector/voice-assistant-concept-vector-sound-600nw-2482589875.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='1500'></div>", unsafe_allow_html=True)
 
 api_key = "..."  # Add your Google API key here
