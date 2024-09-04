@@ -17,10 +17,10 @@ import os
 
 st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 
-st.title("AI Voice Assistant 🎙️")
-st.subheader("Interact in Urdu with Real-Time Voice Input")
+st.title("AI Voice bot🎙️")
+st.subheader("Urdu Voice Interaction with Real-Time AI Responses")
 
-api_key = "..."
+api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"
 
 # Define the prompt
 prompt = ChatPromptTemplate(
