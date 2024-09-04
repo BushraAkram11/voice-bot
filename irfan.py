@@ -67,7 +67,7 @@ if text:
             message_placeholder.markdown(full_response)
 
     # Clean the response to remove unwanted characters like '**'
-    cleaned_response = re.sub(r"\*\*|__","*", "", full_response)
+    cleaned_response = re.sub(r"\*\*|__", "", full_response)
 
     with st.spinner("Converting Text To Speech..."):
         tts = gTTS(text=cleaned_response, lang="ur")
