@@ -21,7 +21,7 @@ st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
 
-api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"
+api_key = "..."  # Add your Google API key here
 
 # Define the prompt
 prompt = ChatPromptTemplate(
@@ -63,11 +63,10 @@ if text:
 
         for res in response:
             full_response += res or ""
-            message_placeholder.markdown(full_response + "|")
-            message_placeholder.markdown(full_response)
-
-    # Clean the response to remove unwanted characters like '**'
-    cleaned_response = re.sub(r"\*\*|__", "", full_response)
+            # Clean the response to remove unwanted characters like '**'
+            cleaned_response = re.sub(r"\*\*|__", "", full_response)
+            message_placeholder.markdown(cleaned_response + "|")
+            message_placeholder.markdown(cleaned_response)
 
     with st.spinner("Converting Text To Speech..."):
         tts = gTTS(text=cleaned_response, lang="ur")
