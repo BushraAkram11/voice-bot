@@ -24,7 +24,7 @@ st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Ti
 image_url = "https://www.shutterstock.com/image-vector/voice-assistant-concept-vector-sound-600nw-2482589875.jpg"
 st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='1500'></div>", unsafe_allow_html=True)
 
-api_key = "..."  # Add your Google API key here
+api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"  # Add your Google API key here
 
 # Define the prompt
 prompt = ChatPromptTemplate(
