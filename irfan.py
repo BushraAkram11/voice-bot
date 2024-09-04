@@ -22,7 +22,7 @@ st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Ti
 
 # Centered Image below Title and Subtitle with Increased Width
 image_url = "https://media.licdn.com/dms/image/D5612AQGlfhE9IBQ8Bg/article-cover_image-shrink_720_1280/0/1693596641359?e=2147483647&v=beta&t=s4-cupYxd1X8LkPu4ZYRhUnTf-7eYlggKJNhp0cR7zg"
-st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='1000'></div>", unsafe_allow_html=True)
+st.markdown(f"<div style='text-align: center;'><img src='{image_url}' width='1200'></div>", unsafe_allow_html=True)
 
 api_key = "..."  # Add your Google API key here
 
