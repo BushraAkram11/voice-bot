@@ -21,7 +21,7 @@ st.set_page_config(page_title="AI Voice Assistant", page_icon="🤖")
 st.markdown("<h1 style='text-align: center;'> AI Voice Bot </h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center;'>Urdu Voice Interaction with Real-Time AI Responses</h5>", unsafe_allow_html=True)
 
-api_key = "..."  # Add your Google API key here
+api_key = "AIzaSyBXtfPk_O4kqGqyMK8iCD0KE_hfOCYAjUs"  # Add your Google API key here
 
 # Define the prompt
 prompt = ChatPromptTemplate(
